@@ -1,0 +1,25 @@
+-- Configuração do GIT
+git config --global user.name kaua102
+git config --global user.email kaua26987@gmail.com
+
+-- Criar projeto vazio, especificando nome e template vazio
+npx create-expo-app@latest RonaldoShoppingList --template blank
+
+-- Restaurar o projeto após o clone
+cd RonaldoShoppingList
+npm i
+
+-- Executar o projeto via wifi
+npx expo start --android 
+
+-- Bibliotecas
+nxp expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+
+-- app.json:
+"userInterfaceStyle": "light",
+"scheme": "silvinha-health",
+"splash": {}
+
+-- package.json, mudar o main
+"main": "expo-rounter/entry",
