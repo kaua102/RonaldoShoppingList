@@ -5,7 +5,19 @@ export default function Welcome() {
   return (
     <View style={styles.container}>
       <View style={styles.containerImage}>
-
+        <Image 
+          source={require('./assets/images/avatar.png')} 
+          style={styles.avatar}
+        />
+      </View>
+      <View style={styles.content}>
+        <Text style={styles.title}>Welcome to Ronaldo's Shopping List!</Text>
+        <Text style={styles.text}>
+          Monte sua lista de compras e não esqueça mais oque precisa comprar ao sair de casa!
+        </Text>
+        <Link style={styles.button} href={"/home"}>
+          <Text style={styles.buttonText}>Acessar</Text>
+        </Link>
       </View>
     </View>
   );
@@ -14,8 +26,50 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: '#000',
+  },
+  containerImage: {
+    flex: 2,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  avatar: {
+    width: 230,
+    height: 230,
+    resizeMode: 'cover',
+    borderRadius: 115,
+  },  
+  content: {
+    flex: 1,
+    backgroundColor: '#dadada',
+    borderTopStartRadius: 25,
+    borderTopEndRadius: 25,
+    paddingHorizontal: '5%',
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginVertical: 20,
+    textAlign: 'center',
+  },
+  text: {
+    fontSize: 16,
+    color: 'gray',
+
+  },
+  button: {
+    position: 'absolute',
+    backgroundColor: '#000',
+    bottom: '15%',
+    alignSelf: 'center',
+    borderRadius: 50,
+    PaddingVertical: 15,
+    width: '60%',
+    textAlign: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: 'bold',
   },
 });
