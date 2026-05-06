@@ -7,6 +7,7 @@ npx create-expo-app@latest RonaldoShoppingList --template blank
 
 -- Restaurar o projeto após o clone
 cd RonaldoShoppingList
+apagar o lock (muito importante)
 npm i
 
 -- Executar o projeto via wifi
