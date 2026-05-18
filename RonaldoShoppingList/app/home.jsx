@@ -32,7 +32,7 @@ export default function Home() {
                     placeholderTextColor='#aeaeae'
                 />
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.iconContainer} onPress={addProduto}>
                 <Ionicons name="add" size={36} color="#fff"/>
             </TouchableOpacity>   
         </View>
@@ -41,4 +41,48 @@ export default function Home() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  header: {
+    padding: 25,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#000000c0',
+    borderBottomStartRadius: 30,
+    borderBottomEndRadius: 30,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#ffffff'
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    backgroundColor: '#000000c0',
+    borderTopStartRadius: 30,
+    borderTopEndRadius: 30,
+  },
+  inputContainer:{
+    backgroundColor: '#000',
+    elevation: 40,
+    flex: 1,
+    height: 50,
+    marginVertical: 20,
+    borderRadius: 30,
+    justifyContent: 'center',
+  },
+  iconContainer:{
+    borderRadius: 25,
+    height: 50,
+    width: 50,
+    backgroundColor: '#000',
+    elevation: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+})
