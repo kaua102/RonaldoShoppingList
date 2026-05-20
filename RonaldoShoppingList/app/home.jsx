@@ -1,12 +1,29 @@
-import React from 'react'
-import { Alert, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Alert, FlatList, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons' 
 
 export default function Home() {
+  const [textInput, setTextInput] = useState('');
+  const [items, setItems] = useState([]);
 
-    function addProduto(){
-        Alert.alert('Adicionar Produto');
+    function addProduto() {
+      console.log(textInput)
+      if (textInput == '') {
+        Alert.alert(
+          'Ocorreu um problema :(',
+          'O nome do produto não pode ser vazio.'
+        );
+        return;
+      }
+      console.log("teste");
+      const newItem = {
+        id: Date.now().toString(),
+        name: textInput,
+        bought: false,
+      };
+      setItems([...items, newItem,]);
+      setTextInput('');
     }
 
   return (
@@ -22,6 +39,13 @@ export default function Home() {
         </View> 
 
         {/*Lista de Compras*/}
+        <FlatList 
+          contentContainerStyle={{ padding: 20, paddingBottom: 100, color: '#fff'}}
+          data={items}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({item}) => 
+          <Text>{item.name}</Text>}
+        />
 
         <View style={styles.footer}>
             <View style={styles.inputContainer}>
@@ -30,6 +54,8 @@ export default function Home() {
                     fontSize={18}
                     placeholder='Digite o nome do produto...'
                     placeholderTextColor='#aeaeae'
+                    value={textInput}
+                    onChangeText={(text) => setTextInput(text)}
                 />
             </View>
             <TouchableOpacity style={styles.iconContainer} onPress={addProduto}>
