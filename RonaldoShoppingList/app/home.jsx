@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Alert, FlatList, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons' 
+import ItemList from '../components/itemList';
 
 export default function Home() {
   const [textInput, setTextInput] = useState('');
@@ -44,7 +45,8 @@ export default function Home() {
           data={items}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({item}) => 
-          <Text>{item.name}</Text>}
+            <ItemList item={item}/>
+          }
         />
 
         <View style={styles.footer}>
