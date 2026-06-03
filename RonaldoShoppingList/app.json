@@ -1,17 +1,16 @@
 {
   "expo": {
-    "name": "RonaldoShoppingList",
-    "slug": "RonaldoShoppingList",
+    "name": "listashopping",
+    "slug": "listashopping",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "scheme": "RonaldoShoppingList",
+    "scheme": "listashopping-scheme",
     "experiments": {
       "typedRoutes": true
     },
-    
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
